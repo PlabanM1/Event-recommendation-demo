@@ -1,5 +1,6 @@
 package com.eventRecommender.viagogo;
 
+
 import java.util.HashSet;
 import java.util.PriorityQueue;
 import java.util.Random;
@@ -16,9 +17,9 @@ public class Event {
 	//List of tickets with different prices
 	PriorityQueue<Float> tickets = new PriorityQueue<Float>();
 	//Check for non duplicate coordinates- only for random seed generation testing
-	static Set<Integer> xSet = new HashSet<Integer>();
-	static Set<Integer> ySet = new HashSet<Integer>();
-	
+	static Set<String> xySet = new HashSet<String>();
+
+		
 	
 	public Event()
 	{
@@ -37,10 +38,12 @@ public class Event {
 		while(xyflag){
 			this.xCoord = rand.nextInt(max - min)  + min;
 			this.yCoord = rand.nextInt(max - min)  + min;
-			if (!(xSet.contains(this.xCoord) && ySet.contains(this.yCoord))){
+			
+			String xys=(""+this.xCoord+""+this.yCoord);
+			if (!xySet.contains(xys)){
 				xyflag=false;
-				xSet.add(this.xCoord);
-				ySet.add(this.yCoord);
+				xySet.add(xys);
+				
 			}
 		}
 		
@@ -51,7 +54,7 @@ public class Event {
 	    this.numTickets = rand.nextInt(50) ;	
 	    //Price for each ticket
 	    for(int i=0;i<numTickets;i++){
-	    	this.tickets.add(rand.nextFloat() * (500) + 1.0f);
+	    	this.tickets.add(rand.nextFloat()*500.0f + 1.0f);
 	    	}    		
 	}
 	
