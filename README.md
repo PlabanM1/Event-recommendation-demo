@@ -1,8 +1,12 @@
 # Event-recommendation-demo
 Assumptions:
+
 1.Based on the example, I have assumed that the coordinates cannot be fractional, for ex 3.65,4.50 is not a valid coordinate. If floating point coordinates are allowed, then it is just a matter of changing the datatype of coordinates to float instead of int
+
 2. I have assumed that each event has a set of tickets where each ticket has a price. So, I have placed the tickets in a priority queue sorted by their price.
+
 The solution is divided into three files:
+
 1.	Event.java:
 This class is the blueprint of all events in the solution. All the events that will be created will be objects of this class.
 It has a unique id that is incremented by 1 each time a new object is created
