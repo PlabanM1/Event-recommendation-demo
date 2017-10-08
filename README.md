@@ -3,6 +3,7 @@
 Assumptions:
 
 1.Based on the example, I have assumed that the coordinates cannot be fractional, for ex 3.65,4.50 is not a valid coordinate. If floating point coordinates are allowed, then it is just a matter of changing the datatype of coordinates to float instead of int
+
 2. I have assumed that each event has a set of tickets where each ticket has a price. So, I have placed the tickets in a priority queue sorted by their price.
 
 The solution is divided into three files:
@@ -35,7 +36,7 @@ All functionalities have comments detailing their uses.
 
 To execute, just execute RunRecommender.java which will prompt you for input coordinates , on entering it , you get the desired output. 
 
-#If multiple events at same location need to be supported
+# If multiple events at same location need to be supported
 
 If multiple events need to be supported at same location, we could create a class called “Location” which would have x coordinates,y-coordinates as its properties and contain a list/arraylist of Event Objects (Objects of class Event). 
 
@@ -45,7 +46,7 @@ On entering user location, all Location objects in the database would be kept in
 
 We can even sort the lowest ticket prices of all the events in a location and display the ones with the least price. For example, if the nearest location has 10 events and we want to display five, we can sort the cheapest price of all events and display the 5 least expensive ones. This can be done by a priority queue as well
 
-#If the world size is larger
+# If the world size is larger
 
 If the coordinates can range beyond -10 to 10, we have the possibility of getting a lot of events. We need to optimize our code in that case. 
 
